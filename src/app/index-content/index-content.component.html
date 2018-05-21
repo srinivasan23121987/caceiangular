@@ -1,44 +1,66 @@
-  
-  <div class="example-container mat-elevation-z1">
-    <table matSort mat-table #table [dataSource]="dataSource">
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-  
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-  
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"  mat-sort-header> {{element.symbol}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator #paginator
-                   [pageSize]="5"
-                   [pageSizeOptions]="[5, 10, 20]"
-                   [showFirstLastButtons]="true">
-    </mat-paginator>
-  </div>
-  
-  
-  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+<div class="example-container mat-elevation-z1">
+  <table class="ca_table"  matSort mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> S.No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.sno}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Event ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.event_id}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Event Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.event_name}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Security ID type </th>
+      <td mat-cell *matCellDef="let element"> {{element.security_id_type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ccy">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> CCY </th>
+      <td mat-cell *matCellDef="let element"> {{element.ccy}} </td>
+    </ng-container>
+    <ng-container matColumnDef="security_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Security ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.security_id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="security_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Security Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.security_name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="event_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Event Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.event_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="payment_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Payment Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.payment_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="settlement_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Settlement Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.settlement_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="shareOffer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Per Share/Offer </th>
+      <td mat-cell *matCellDef="let element"> {{element.pershare_offer}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
       Use of this source code is governed by an MIT-style license that
       can be found in the LICENSE file at http://angular.io/license -->
-
