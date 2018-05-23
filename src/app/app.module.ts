@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule,ReactiveFormsModule  } from "@angular/forms";
 
 
 const routes: Routes=[
@@ -25,6 +26,8 @@ const routes: Routes=[
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     RouterModule.forRoot(routes)
   ],

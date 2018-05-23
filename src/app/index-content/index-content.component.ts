@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+
+
 @Component({
   selector: 'app-index-content',
   templateUrl: './index-content.component.html',
@@ -9,7 +12,12 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 export class IndexContentComponent implements OnInit {
   displayedColumns = ['position', 'name', 'weight', 'symbol', 'ccy', 'security_id', 'security_name', 'event_date', 'payment_date', 'settlement_date', 'shareOffer'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
-
+  matForm = new FormGroup({ foodValue: new FormControl('', [Validators.required]) });
+  foods = [
+    { value: 'steak-0', viewValue: 'Steak' },
+    { value: 'pizza-1', viewValue: 'Pizza' },
+    { value: 'tacos-2', viewValue: 'Tacos' }
+  ];
   constructor() { }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
